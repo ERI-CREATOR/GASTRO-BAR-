@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informacion y Experiencia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAq6a1z5l5d5e5b5e5b5e5b5e5b5e"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!--Empiezo con un header y el NAVBAR-->
+    <header class="header">
+      <h1 class="titulo">Informacion y Experiencia</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">menu</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Aqui empiezo con la seccion de historia, un poco de texto y uso de acordeones-->
+
+    <section class="historia">
+      <h2>Historia</h2>
+      <p>
+        La historia de nuestra empresa comienza hace más de 20 años, cuando un
+        grupo de apasionados por la gastronomía decidió abrir un pequeño
+        restaurante en el corazón de Pereira. Lo que nació como un sueño entre
+        amigos, pronto se convirtió en un referente local por su calidez, su
+        atención al detalle y su compromiso con la calidad. Con el paso del
+        tiempo, crecimos junto a nuestra ciudad. Evolucionamos sin perder
+        nuestras raíces, manteniendo siempre viva la esencia que nos diferencia:
+        la pasión por ofrecer experiencias culinarias memorables. Hoy, somos más
+        que un restaurante. Somos un gastrobar que honra la tradición, pero que
+        también abraza lo moderno. Hemos renovado nuestros espacios, refrescado
+        nuestro menú y reimaginado nuestro concepto, fusionando técnicas
+        contemporáneas con ingredientes locales y un ambiente sofisticado que
+        respira elegancia sin pretensiones. En cada plato, en cada copa y en
+        cada detalle de nuestro servicio, se siente el equilibrio perfecto entre
+        lo clásico y lo nuevo. Seguimos siendo ese lugar donde nacen momentos
+        especiales, pero ahora con una identidad renovada que celebra lo mejor
+        del pasado con la mirada puesta en el futuro.
+      </p>
+
+      <h3>Acordeón de Historia</h3>
+      <div class="acordeon">
+        <button class="acordeon-btn">Inicio</button>
+        <div class="acordeon-content">
+          <p>
+            En nuestros inicios, nos enfocamos en ofrecer platos tradicionales
+            con un toque moderno. Con el tiempo, hemos incorporado influencias
+            internacionales a nuestro menú.
+          </p>
+        </div>
+
+        <button class="acordeon-btn">Crecimiento</button>
+        <div class="acordeon-content">
+          <p>
+            A medida que ganamos popularidad, abrimos nuevas sucursales y
+            ampliamos nuestro equipo para seguir brindando la mejor experiencia
+            a nuestros clientes.
+          </p>
+        </div>
+
+        <button class="acordeon-btn">Futuro</button>
+        <div class="acordeon-content">
+          <p>
+            Nuestro objetivo es seguir innovando y adaptándonos a las tendencias
+            gastronómicas, siempre manteniendo la calidad que nos caracteriza.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--la idea de usar los alerts seria con un boton que cuando lo presiones aparesca la alerta pero seria un diseño con un uso algo desmedido de js
+    no se si se puede o como lo deberia hacer-->
+
+    <!--aca empieza el boton, es basicamente el alert-->
+    <div>
+      <button class="reserva-btn" onclick="mostrarAlerta()">
+        Haz una reserva ahora mismo
+      </button>
+    </div>
+
+    <!--aqui empieza el modal-->
+
+    <!-- Botón para abrir el modal -->
+    <button class="promo-btn" onclick="abrirModal()">
+      Ver menú especial por el dia de hoy
+    </button>
+
+    <!-- Modal -->
+    <div id="miModal" class="custom-modal modal">
+      <div class="modal-content">
+        <h2>Menú Especial</h2>
+        <p>
+          buñuelo + pony malta =
+          <span>$15.000</span>
+        </p>
+        <button class="promo-close-btn" onclick="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+    <!-- Fin de el modal -->
+    <script src="js.js"></script>
+  </body>
+</html>
+
+<!--Cami, no añadi imiganes porque pues se iban a perder en lo que yo se lo enviaba, y la historia y los textos basicamente 
+se los pedi a chatgpt entonces no tienen mucho sentido de resto le meti las cosas normal y breve usd mirara como lo cuadra todo. la buena-->

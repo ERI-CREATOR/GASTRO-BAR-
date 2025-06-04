@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+     <title>Document</title>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#inicio">Gastro-Bar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Menu">Menu</a>  
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#promociones">Promociones</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Otras opciones
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#Contacto">Contacto</a></li>
+            <li><a class="dropdown-item" href="#Informacion">Informacion</a></li>
+            <li><a class="dropdown-item" href="#Formulario">Formulario</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="homePage">
+      
+        <section class="hero-section" id="inicio">
+            <div class="container">
+                <h1>Bienvenidos al Rancho</h1>
+                <p class="lead">Donde la tradición se encuentra con el sabor auténtico</p>
+                <button type="button" class="btn btn-rancho" href="#Menu">Ver Nuestro Menú</button>
+            </div>
+        </section>
+
+     <section class="historia" id="historia">
+      <h2>Historia</h2>
+      <p>
+        La historia de nuestra empresa comienza hace más de 20 años, cuando un
+        grupo de apasionados por la gastronomía decidió abrir un pequeño
+        restaurante en el corazón de Pereira. Lo que nació como un sueño entre
+        amigos, pronto se convirtió en un referente local por su calidez, su
+        atención al detalle y su compromiso con la calidad. Con el paso del
+        tiempo, crecimos junto a nuestra ciudad. Evolucionamos sin perder
+        nuestras raíces, manteniendo siempre viva la esencia que nos diferencia:
+        la pasión por ofrecer experiencias culinarias memorables. Hoy, somos más
+        que un restaurante. Somos un gastrobar que honra la tradición, pero que
+        también abraza lo moderno. Hemos renovado nuestros espacios, refrescado
+        nuestro menú y reimaginado nuestro concepto, fusionando técnicas
+        contemporáneas con ingredientes locales y un ambiente sofisticado que
+        respira elegancia sin pretensiones. En cada plato, en cada copa y en
+        cada detalle de nuestro servicio, se siente el equilibrio perfecto entre
+        lo clásico y lo nuevo. Seguimos siendo ese lugar donde nacen momentos
+        especiales, pero ahora con una identidad renovada que celebra lo mejor
+        del pasado con la mirada puesta en el futuro.
+      </p>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/k70SLggIwZg?si=u6V08PjQObifWIBr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <h3>Acordeón de Historia</h3>
+      <div class="acordeon">
+        <button class="acordeon-btn">Inicio</button>
+        <div class="acordeon-content">
+          <p>
+            En nuestros inicios, nos enfocamos en ofrecer platos tradicionales
+            con un toque moderno. Con el tiempo, hemos incorporado influencias
+            internacionales a nuestro menú.
+          </p>
+        </div>
+
+        <button class="acordeon-btn">Crecimiento</button>
+        <div class="acordeon-content">
+          <p>
+            A medida que ganamos popularidad, abrimos nuevas sucursales y
+            ampliamos nuestro equipo para seguir brindando la mejor experiencia
+            a nuestros clientes.
+          </p>
+        </div>
+
+        <button class="acordeon-btn">Futuro</button>
+        <div class="acordeon-content">
+          <p>
+            Nuestro objetivo es seguir innovando y adaptándonos a las tendencias
+            gastronómicas, siempre manteniendo la calidad que nos caracteriza.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--la idea de usar los alerts seria con un boton que cuando lo presiones aparesca la alerta pero seria un diseño con un uso algo desmedido de js
+    no se si se puede o como lo deberia hacer-->
+
+    <!--aca empieza el boton, es basicamente el alert-->
+    <div>
+      <button class="reserva-btn" onclick="mostrarAlerta()">
+        Haz una reserva ahora mismo
+      </button>
+    </div>
+
+
+  <section class="section" id="Menu">
+   <div class="container mt-4 text-center">
+  <div class="btn-group" role="group" aria-label="Filtros">
+    <button type="button" class="btn btn-outline-secondary">Todos</button>
+    <button type="button" class="btn btn-outline-secondary">Platos</button>
+    <button type="button" class="btn btn-outline-secondary">Bebidas</button>
+    <button type="button" class="btn btn-outline-secondary">Postres</button>
+    <button type="button" class="btn btn-outline-secondary">Promociones</button>
+    <button type="button" class="btn btn-outline-secondary">Galería</button>
+  </div>
+</div>
+
+<div class="toast-container">
+  <div id="pedidoToast" class="toast align-items-center text-bg-success border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">Producto agregado al pedido.</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+ 
+<div class="container py-5">
+  <h2 class="text-center">Nuestro Menú</h2>
+
+          <section class="section" id="promociones">
+            <div class="container">
+                <h2>Promociones Especiales</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card card-rancho">
+                            <div class="card-header">
+                                Lunes de Parciales
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>2x1 en todas las empanadas</li>
+                                    <li>Descuento 20% en bebidas</li>
+                                    <li>Válido todo el día</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-rancho">
+                            <div class="card-header">
+                                Happy Hour Shots
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Cócteles a mitad de precio</li>
+                                    <li>4:00 PM - 7:00 PM</li>
+                                    <li>Martes a viernes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-rancho">
+                            <div class="card-header">
+                                Fin de Semestre
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Menú completo para grupos</li>
+                                    <li>Música en vivo</li>
+                                    <li>Reservas disponibles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+  <div class="menu-section">
+  <h3 class="menu-title"> Platos para Compartir </h3>
+  <div class="row g-4">
+ 
+    <div class="col-md-4 menu-item" data-category="platos">                
+      <div class="card h-100">
+        <img src="empanadas.jpg" class="card-img-top" alt="Mini Parciales">
+        <div class="card-body">
+          <h5 class="card-title">Mini Parciales x5</h5>
+          <p class="card-text">Pollo - Carne - Queso - Mixtas</p>
+          <p class="price">$10.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Ideales para sobrevivir antes del parcial.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="papitas criollas.jpg" class="card-img-top" alt="Papitas Criollas">
+        <div class="card-body">
+          <h5 class="card-title">Receso Crítico</h5>
+          <p class="card-text">Papitas Criollas con salsa de la casa</p>
+          <p class="price">$6.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Un descanso rápido, pero contundente.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="chip platanos.jpg" class="card-img-top" alt="Chips de Plátano">
+        <div class="card-body">
+          <h5 class="card-title">Tarea Inesperada</h5>
+          <p class="card-text">Chips de plátano + salsa secreta</p>
+          <p class="price">$10.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Nadie la pidió, pero todos la disfrutan.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="papas fritas.jpeg" class="card-img-top" alt="Papas Rizadas">
+        <div class="card-body">
+          <h5 class="card-title">Llamado a Dirección</h5>
+          <p class="card-text">Papas rizadas, tocineta y 3 quesos</p>
+          <p class="price">$21.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Cuando lo prohíben, más lo quieres.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="quesadillas.jpeg" class="card-img-top" alt="Quesadillas">
+        <div class="card-body">
+          <h5 class="card-title">Colados en Parcial</h5>
+          <p class="card-text">Mini quesadillas de birria con queso</p>
+          <p class="price">$27.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Llegaron de la nada, se quedaron en tu corazón.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="ceviche.jpg" class="card-img-top" alt="Ceviche">
+        <div class="card-body">
+          <h5 class="card-title">Examen Final</h5>
+          <p class="card-text">Ceviche cantinero con mariscos frescos</p>
+          <p class="price">$37.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="¡Solo para valientes! El último plato del semestre.">Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-section">
+  <h3 class="menu-title">Bebidas</h3>
+  <div class="row">
+<!-- Bebidas -->
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="Coctelvodka.jpg" class="card-img-top" alt="Cóctel Modo Parcial">
+    <div class="card-body">
+      <h5 class="card-title">Cóctel Modo Parcial</h5>
+      <p class="card-text">Vodka, limón, soda, un toque de energía.</p>
+      <p class="price">$18.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Recarga tu mente antes del examen.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="margarita.jpg" class="card-img-top" alt="Margarita del Último Intento">
+    <div class="card-body">
+      <h5 class="card-title">Margarita del Último Intento</h5>
+      <p class="card-text">Tequila, triple sec y jugo de limón.</p>
+      <p class="price">$20.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="¡Una última oportunidad refrescante!">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="limonadas.jpg" class="card-img-top" alt="Limonada Refrescante Parcial">
+    <div class="card-body">
+      <h5 class="card-title">Limonada Refrescante Parcial</h5>
+      <p class="card-text">Natural con hierbabuena, opción con coco.</p>
+      <p class="price">$9.500</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Ideal para refrescar neuronas quemadas.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="cafe_frio.jpg" class="card-img-top" alt="Café Frío Modo Cansado">
+    <div class="card-body">
+      <h5 class="card-title">Café Frío Modo Cansado</h5>
+      <p class="card-text">Cold brew con leche condensada y hielo.</p>
+      <p class="price">$7.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Para noches largas de estudio.">Info</button>
+    </div>
+  </div>
+</div>
+
+<!-- Postres -->
+<div class="col-md-4 menu-item" data-category="postres" href="#postres">
+  <div class="card h-100">
+    <img src="brownie.jpg" class="card-img-top" alt="Brownie con Helado">
+    <div class="card-body">
+      <h5 class="card-title">Brownie Parcial</h5>
+      <p class="card-text">Brownie de chocolate caliente con bola de helado</p>
+      <p class="price">$9.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="La mejor forma de cerrar una jornada intensa.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="postres">
+  <div class="card h-100">
+    <img src="cheesecake-maracuya.jpg" class="card-img-top" alt="Cheesecake de Maracuyá">
+    <div class="card-body">
+      <h5 class="card-title">Cheesecake de Maracuyá</h5>
+      <p class="card-text">Dulce, ácido y perfecto para endulzar tu semestre</p>
+      <p class="price">$12.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Tan irresistible como copiar en un examen.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="postres">
+  <div class="card h-100">
+    <img src="helado_artesanal.jpg" class="card-img-top" alt="Helado Artesanal">
+    <div class="card-body">
+      <h5 class="card-title">Descanso Helado</h5>
+      <p class="card-text">Helado artesanal de sabores surtidos</p>
+      <p class="price">$7.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Como una siesta, pero en versión postre.">Info</button>
+    </div>
+  </div>
+</div>
+  
+
+    <!--aqui empieza el modal-->
+
+    <!-- Botón para abrir el modal -->
+    <button class="promo-btn" onclick="abrirModal()">
+      Ver menú especial por el dia de hoy
+    </button>
+
+    <!-- Modal -->
+    <div id="miModal" class="custom-modal modal">
+      <div class="modal-content">
+        <h2>Menú Especial</h2>
+        <p>
+          Enchiladas especiales=
+          <span>$35.000</span>
+        </p>
+        <button class="promo-close-btn" onclick="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+  <!-- Galería -->
+<div class="menu-section">
+  <h3 class="menu-title">Galería de Ambientes</h3>
+  <div id="galeriaCarrusel" class="carousel slide carousel-custom" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="licores.jpg" class="d-block w-100" alt="Ambiente 1">
+      </div>
+
+      <div class="carousel-item">
+        <img src="Bar.jpg" class="d-block w-100" alt="Ambiente 2">
+      </div>
+
+      <div class="carousel-item">
+        <img src="comida.jpg" class="d-block w-100" alt="Ambiente 3">
+      </div>
+
+      <div class="carousel-item">
+        <img src="compartir.jpg" class="d-block w-100" alt="Ambiente 4">
+      </div>
+
+    </div>
+
+    <!-- Controles de navegación -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarrusel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarrusel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#galeriaCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#galeriaCarrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#galeriaCarrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#galeriaCarrusel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+  </div>
+</div>
+<div class="modal fade" id="imgModal1" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?restaurant" class="w-100"></div></div></div>
+<div class="modal fade" id="imgModal2" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?bar" class="w-100"></div></div></div>
+<div class="modal fade" id="imgModal3" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?cocktail" class="w-100"></div></div></div>
+<div class="modal fade" id="imgModal4" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?people,restaurant" class="w-100"></div></div></div>
+
+        </section>
+
+        <!-- Información -->
+        <section class="section" id="#informacion">
+            <div class="container">
+
+                    <div class="col-md-6">
+                        <div class="card card-rancho">
+                            <div class="card-header">
+                            Horarios de Atención 
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Lunes a Jueves: 11:00 AM - 11:00 PM</li>
+                                    <li>Viernes y Sábado: 11:00 AM - 1:00 AM</li>
+                                    <li>Domingo: 12:00 PM - 10:00 PM</li>
+                                    <li>Happy Hour: Mar-Vie 4:00-7:00 PM</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer>
+    <h1>Contáctanos</h1>
+    </footer> 
+    <div class="contacto-container">
+      
+        <form action="/enviar" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="text" name="asunto" placeholder="Asunto" required>
+            <textarea name="mensaje" placeholder="Mensaje..." rows="6" required></textarea>
+            <button type="submit"> Enviar mensaje </button>
+            <p class="mensaje-exito">¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.</p>
+        
+        </form>
+    </div>
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+    <div class="redes-sociales">
+        <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank"> <i class="fab fa-instagram"> </i> </a>
+        <a href="https://twitter.com" target="_blank"> <i class="fab fa-twitter"> </i> </a>
+    </div>
+
+        <p>&copy; 2025 restaurante etc. dando esperiencias unicas en cada bocado.</p>
+    </footer>                                
+</body>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js">
+    function showMenuPage() {
+        window.location.href = "#Menu";
+    }
+</script>
+</html>

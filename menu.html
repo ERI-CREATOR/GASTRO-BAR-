@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menú - MoDo PaRcIaL Gastro-Bar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<!-- Navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MoDo PaRcIaL Gastro-Bar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#menu">Menú</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Botones de filtro -->
+<div class="container mt-4 text-center">
+  <div class="btn-group" role="group" aria-label="Filtros">
+    <button type="button" class="btn btn-outline-secondary">Todos</button>
+    <button type="button" class="btn btn-outline-secondary">Platos</button>
+    <button type="button" class="btn btn-outline-secondary">Bebidas</button>
+    <button type="button" class="btn btn-outline-secondary">Postres</button>
+  </div>
+</div>
+
+<div class="toast-container">
+  <div id="pedidoToast" class="toast align-items-center text-bg-success border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">Producto agregado al pedido.</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+ 
+<div class="container py-5">
+  <h2 class="text-center">Nuestro Menú</h2>
+
+  <div class="menu-section">
+  <h3 class="menu-title"> Platos para Compartir </h3>
+  <div class="row g-4">
+ 
+    <div class="col-md-4 menu-item" data-category="platos">                
+      <div class="card h-100">
+        <img src="empanadas.jpg" class="card-img-top" alt="Mini Parciales">
+        <div class="card-body">
+          <h5 class="card-title">Mini Parciales x5</h5>
+          <p class="card-text">Pollo - Carne - Queso - Mixtas</p>
+          <p class="price">$10.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Ideales para sobrevivir antes del parcial.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="papitas criollas.jpg" class="card-img-top" alt="Papitas Criollas">
+        <div class="card-body">
+          <h5 class="card-title">Receso Crítico</h5>
+          <p class="card-text">Papitas Criollas con salsa de la casa</p>
+          <p class="price">$6.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Un descanso rápido, pero contundente.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="chip platanos.jpg" class="card-img-top" alt="Chips de Plátano">
+        <div class="card-body">
+          <h5 class="card-title">Tarea Inesperada</h5>
+          <p class="card-text">Chips de plátano + salsa secreta</p>
+          <p class="price">$10.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Nadie la pidió, pero todos la disfrutan.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="papas fritas.jpeg" class="card-img-top" alt="Papas Rizadas">
+        <div class="card-body">
+          <h5 class="card-title">Llamado a Dirección</h5>
+          <p class="card-text">Papas rizadas, tocineta y 3 quesos</p>
+          <p class="price">$21.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Cuando lo prohíben, más lo quieres.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="quesadillas.jpeg" class="card-img-top" alt="Quesadillas">
+        <div class="card-body">
+          <h5 class="card-title">Colados en Parcial</h5>
+          <p class="card-text">Mini quesadillas de birria con queso</p>
+          <p class="price">$27.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Llegaron de la nada, se quedaron en tu corazón.">Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="platos">
+      <div class="card h-100">
+        <img src="ceviche.jpg" class="card-img-top" alt="Ceviche">
+        <div class="card-body">
+          <h5 class="card-title">Examen Final</h5>
+          <p class="card-text">Ceviche cantinero con mariscos frescos</p>
+          <p class="price">$37.900</p>
+          <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+          <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="¡Solo para valientes! El último plato del semestre.">Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-section">
+  <h3 class="menu-title">Bebidas</h3>
+  <div class="row">
+<!-- Bebidas -->
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="Coctelvodka.jpg" class="card-img-top" alt="Cóctel Modo Parcial">
+    <div class="card-body">
+      <h5 class="card-title">Cóctel Modo Parcial</h5>
+      <p class="card-text">Vodka, limón, soda, un toque de energía.</p>
+      <p class="price">$18.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Recarga tu mente antes del examen.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="margarita.jpg" class="card-img-top" alt="Margarita del Último Intento">
+    <div class="card-body">
+      <h5 class="card-title">Margarita del Último Intento</h5>
+      <p class="card-text">Tequila, triple sec y jugo de limón.</p>
+      <p class="price">$20.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="¡Una última oportunidad refrescante!">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="limonadas.jpg" class="card-img-top" alt="Limonada Refrescante Parcial">
+    <div class="card-body">
+      <h5 class="card-title">Limonada Refrescante Parcial</h5>
+      <p class="card-text">Natural con hierbabuena, opción con coco.</p>
+      <p class="price">$9.500</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Ideal para refrescar neuronas quemadas.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="bebidas">
+  <div class="card h-100">
+    <img src="cafe_frio.jpg" class="card-img-top" alt="Café Frío Modo Cansado">
+    <div class="card-body">
+      <h5 class="card-title">Café Frío Modo Cansado</h5>
+      <p class="card-text">Cold brew con leche condensada y hielo.</p>
+      <p class="price">$7.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Para noches largas de estudio.">Info</button>
+    </div>
+  </div>
+</div>
+
+<!-- Postres -->
+<div class="col-md-4 menu-item" data-category="postres">
+  <div class="card h-100">
+    <img src="brownie.jpg" class="card-img-top" alt="Brownie con Helado">
+    <div class="card-body">
+      <h5 class="card-title">Brownie Parcial</h5>
+      <p class="card-text">Brownie de chocolate caliente con bola de helado</p>
+      <p class="price">$9.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="La mejor forma de cerrar una jornada intensa.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="postres">
+  <div class="card h-100">
+    <img src="cheesecake-maracuya.jpg" class="card-img-top" alt="Cheesecake de Maracuyá">
+    <div class="card-body">
+      <h5 class="card-title">Cheesecake de Maracuyá</h5>
+      <p class="card-text">Dulce, ácido y perfecto para endulzar tu semestre</p>
+      <p class="price">$12.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Tan irresistible como copiar en un examen.">Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 menu-item" data-category="postres">
+  <div class="card h-100">
+    <img src="helado_artesanal.jpg" class="card-img-top" alt="Helado Artesanal">
+    <div class="card-body">
+      <h5 class="card-title">Descanso Helado</h5>
+      <p class="card-text">Helado artesanal de sabores surtidos</p>
+      <p class="price">$7.900</p>
+      <button class="btn btn-success" onclick="showToast()">Agregar al pedido</button>
+      <button class="btn btn-info" data-bs-toggle="popover" data-bs-content="Como una siesta, pero en versión postre.">Info</button>
+    </div>
+  </div>
+</div>
+  <!-- Galería -->
+  <div class="menu-section">
+    <h3 class="menu-title">Galería de Ambientes</h3>
+    <div class="row gallery">
+      <div class="col-6 col-md-3 mb-4">
+        <img src="licores.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal1">
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <img src="Bar.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal2">
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <img src="comida.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal3">
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <img src="compartir.jpg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal4">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="imgModal1" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?restaurant" class="w-100"></div></div></div>
+<div class="modal fade" id="imgModal2" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?bar" class="w-100"></div></div></div>
+<div class="modal fade" id="imgModal3" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?cocktail" class="w-100"></div></div></div>
+<div class="modal fade" id="imgModal4" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="https://source.unsplash.com/1200x800/?people,restaurant" class="w-100"></div></div></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

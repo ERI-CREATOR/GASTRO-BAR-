@@ -1,0 +1,226 @@
+/* estilos de el titulo y navbar */
+.header {
+    background-color: #5B0e2d; /* Color de fondo */
+    color: #f9f4ef; /* Color del texto */
+    padding: 10px 30px 5px 30px; /* Espaciado interno */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60px;
+}
+
+/* fin de los estilos de el titulo y navbar */
+
+
+/*
+| Elemento                    | Color                | Código HEX |
+| --------------------------- | -------------------- | ---------- |
+| Vino tinto principal        | Profundo, elegante   | `#5B0E2D`  |
+| Vino medio secundario       | Contraste suave      | `#8C1C3F`  |
+| Oro cobre (acentos, íconos) | Toque de lujo        | `#C79F59`  |
+| Marfil (fondo claro)        | Neutral, cálido      | `#F9F4EF`  |
+| Gris carbón (texto oscuro)  | Profesional, legible | `#2E2E2E`  |
+
+*/
+
+.titulo{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    margin: 0;
+    font-size: 1.7rem;
+    color: #f9f4ef;
+}
+
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  color: #f9f4ef;
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 20px;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid transparent;
+}
+nav a:hover {
+  background: #C79F59;
+  color: #5B0e2d;
+  border: 1px solid #C79F59;
+}
+
+.nav-link {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Estilos para el acordeón */
+.acordeon {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.acordeon-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  cursor: pointer;
+  padding: 15px 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.acordeon-btn:hover {
+  background-color: #e2e2e2;
+}
+
+.acordeon-content {
+  padding: 15px 20px;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación, CHATGPT SERVICE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/*fin de los estilos del acordeón */
+
+/* estilos historia */
+.historia {
+    background-color: #F9F4EF; 
+    color: #2E2E2E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.7;
+}
+
+/* estilo de el boton */
+.reserva-btn {
+  background-color: #5B0E2D;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(91, 14, 45, 0.08);
+  margin: 20px auto 0 auto;
+  display: block;
+}
+.reserva-btn:hover {
+  background-color: #C79F59;
+  color: #5B0E2D;
+}
+.promo-btn {
+  background-color: #5B0E2D;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(91, 14, 45, 0.08);
+  margin: 20px auto 0 auto;
+  display: block;
+}
+.promo-btn:hover {
+  background-color: #C79F59;
+  color: #5B0E2D;
+}
+.promo-close-btn {
+  background-color: #5B0E2D;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.promo-close-btn:hover {
+  background-color: #C79F59;
+  color: #5B0E2D;
+}
+.custom-modal .modal-content {
+  border-radius: 18px;
+  border: 2px solid #C79F59;
+  box-shadow: 0 6px 24px rgba(91, 14, 45, 0.13);
+}
+
+/* Estilos para el modal */
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 600px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.modal-content h2 {
+  color: #5B0E2D;
+}
+.modal-content p {
+  color: #2E2E2E;
+  font-size: 1.2rem;
+}
+.modal-content span {
+  color: #C79F59;
+  font-weight: 600;
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}

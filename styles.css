@@ -1,0 +1,463 @@
+/* Colores base */
+:root {
+  --azul-oscuro: #0a1a2f;
+  --blanco: #ffffff;
+  --dorado: #d4af37;
+}
+
+  body { 
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  color: #000000;
+  background: #E4DDD1;
+  }
+/* Navbar */
+.navbar {
+  background-color: var(--azul-oscuro) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: var(--blanco) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--dorado) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--azul-oscuro);
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-item {
+  color: var(--blanco);
+}
+
+.dropdown-item:hover {
+  background-color: var(--dorado);
+  color: var(--azul-oscuro);
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(rgba(10, 26, 47, 0.8), rgba(10, 26, 47, 0.8)), url('https://source.unsplash.com/1600x900/?restaurant,bar') center/cover no-repeat;
+  color: var(--blanco);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--dorado);
+}
+
+.hero-section .lead {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* Botón personalizado */
+.btn-rancho {
+  background-color: var(--dorado);
+  color: var(--azul-oscuro);
+  border: none;
+  padding: 12px 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+}
+
+.btn-rancho:hover {
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+  box-shadow: 0 0 10px var(--dorado);
+}
+
+/* === Sección Historia === */
+.historia {
+  background-color: #0a1a2f; /* Azul oscuro */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.historia h2 {
+  font-size: 2.5rem;
+  color: #d4af37; /* Dorado */
+  margin-bottom: 20px;
+}
+
+.historia p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+.historia h3 {
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* === Acordeón === */
+.acordeon {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.acordeon-btn {
+  background-color: #d4af37;
+  color: #0a1a2f;
+  border: none;
+  padding: 15px 20px;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.acordeon-btn:hover {
+  background-color: #ffffff;
+  color: #0a1a2f;
+}
+
+.acordeon-content {
+  background-color: #ffffff;
+  color: #0a1a2f;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+/* Mostrar acordeón activo (JS lo puede aplicar con una clase .activo) */
+.acordeon-content.activo {
+  display: block;
+}
+
+/* === Botón de reserva === */
+.reserva-btn {
+  background-color: #d4af37;
+  color: #0a1a2f;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 30px auto;
+  display: block;
+}
+
+.reserva-btn:hover {
+  background-color: #ffffff;
+  color: #0a1a2f;
+  box-shadow: 0 0 10px #d4af37;
+}
+
+/* === Modal === */
+.custom-modal {
+  display: none; 
+  position: center;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 26, 47, 0.8);
+}
+
+.promo-btn {
+  background-color: #d4af37;
+  color: #0a1a2f;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(91, 14, 45, 0.08);
+  margin: 20px auto 0 auto;
+  display: block;
+}
+.promo-btn:hover {
+  background-color: #ffffff;
+  color: #0a1a2f;
+}
+.promo-close-btn {
+  background-color: #d4af37;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.promo-close-btn:hover {
+  background-color: #C79F59;
+  color: #0a1a2f;
+}
+.custom-modal .modal-content {
+  border-radius: 18px;
+  border: 2px solid #C79F59;
+  box-shadow: 0 6px 24px rgba(91, 14, 45, 0.13);
+}
+
+
+body {
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.section {
+  padding: 60px 0;
+}
+
+h2, h3.menu-title {
+  color: #002b5c; 
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.menu-section {
+  margin-top: 60px;
+}
+
+/* Botones de filtro */
+.btn-group .btn {
+  border-color: #002b5c;
+  color: #002b5c;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-group .btn:hover,
+.btn-group .btn:focus {
+  background-color: #002b5c;
+  color: white;
+}
+
+/* Tarjetas de menú */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-header {
+  background-color: #002b5c;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  border-top-left-radius: 16px;
+}
+
+.card-title {
+  color: #002b5c;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #333;
+}
+
+.price {
+  color: #bfa14f; /* Dorado suave */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Botones de acción */
+.btn-success {
+  background-color: #bfa14f;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #a98f3c;
+}
+
+.btn-info {
+  background-color: #002b5c;
+  border: none;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #001f3f;
+}
+
+/* Toast de notificación */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background-color: #198754;
+  color: white;
+}
+
+/* Galería */
+.gallery img {
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.carousel-custom {
+  max-width: 600px;     
+  max-height: 400px;    
+  margin: 0 auto;       
+  overflow: hidden;     
+  border-radius: 12px;  
+}
+
+.carousel-custom img {
+  object-fit: cover;    
+  height: 100%;
+}
+
+/* Modal imágenes */
+.modal-content img {
+  border-radius: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .btn-group .btn {
+    margin-bottom: 10px;
+  }
+}
+.contacto-container {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 60px;
+}
+
+.contacto-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto-container input,
+.contacto-container textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+.contacto-container input:focus,
+.contacto-container textarea:focus {
+    border-color: #004080;
+    outline: none;
+}
+
+.contacto-container button {
+    padding: 15px;
+    background-color: #004080;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contacto-container button:hover {
+    background-color: #002d5f;
+}
+
+.mensaje-exito {
+    text-align: center;
+    margin-top: 20px;
+    color: #004080;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--azul-oscuro);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.redes-sociales {
+    margin: 20px 0;
+}
+
+.redes-sociales a {
+    color: gold;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: #ffffff;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}

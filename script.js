@@ -1,28 +1,27 @@
+// filtros del los elementos del menú
 const filterButtons = document.querySelectorAll('#filterButtons button');
-  const menuItems = document.querySelectorAll('.menu-item');
+const menuItems = document.querySelectorAll('.menu-item');
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      
-      button.classList.add('active');
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 
-      const filter = button.getAttribute('data-filter');
-
-      menuItems.forEach(item => {
-        const category = item.getAttribute('data-category');
-        if (filter === 'todos' || category === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+    const filter = button.textContent.toLowerCase();
+    
+    menuItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+      if (filter === 'todos' || category === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
     });
   });
+});
 
-  const acordeonBtns = document.querySelectorAll('.acordeon-btn');
-
+// la parte del Acordeón 
+const acordeonBtns = document.querySelectorAll('.acordeon-btn');
 acordeonBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const content = btn.nextElementSibling;
@@ -30,45 +29,50 @@ acordeonBtns.forEach(btn => {
   });
 });
 
-// este es el js de la alerta de la página
-
+// la parte de la Alerta de reserva
 function mostrarAlerta() {
-    alert("¡Gracias por tu reserva! Te esperamos en nuestro gastrobar.");
-  }
-
-// este es el js de el modal de la página
-
-
-function abrirModal() {
-  document.getElementById("miModal").style.display = "block";
+  alert("¡Gracias por tu reserva! Te esperamos en nuestro gastrobar.");
 }
 
-     document.querySelector('form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                        
-                        showToast('Mensaje enviado con éxito.');       
-                        this.reset();
-                    
-                });
+// Modal - Versión mejorada usando Bootstrap
+function abrirModal() {
+  const modal = new bootstrap.Modal(document.getElementById('miModal'));
+  modal.show();
+}
 
- function showToast(message) {
-  let toast = document.createElement('div');
-    toast.textContent = message;
-    toast.style.position = 'fixed';
-    toast.style.bottom = '30px';
-    toast.style.right = '30px';
-    toast.style.background = '#333';
-    toast.style.color = '#fff';
-    toast.style.padding = '16px 24px';
-    toast.style.borderRadius = '8px';
-    toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
-    toast.style.zIndex = '9999';
-    toast.style.fontSize = '16px';
-    document.body.appendChild(toast);
+function cerrarModal() {
+  const modal = bootstrap.Modal.getInstance(document.getElementById('miModal'));
+  modal.hide();
+}
 
-                    setTimeout(() => {
-                        toast.style.transition = 'opacity 0.5s';
-                        toast.style.opacity = '0';
-                        setTimeout(() => document.body.removeChild(toast), 500);
-                    }, 3000);
+// parte del Toast de Bootstrap para agregar pedido
+function showToast() {
+  const toastEl = document.getElementById('pedidoToast');
+  const toast = new bootstrap.Toast(toastEl);
+  toast.show();
+}
+
+// parte del Toast para el formulario de contacto
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Mostrar toast de Bootstrap 
+  const toastEl = document.getElementById('pedidoToast');
+  const toast = new bootstrap.Toast(toastEl);
+  toast.show();
+  
+  this.reset();
+});
+
+// Inicializar componentes de Bootstrap cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+  // parte de la Inicializacion de popovers
+  const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  popoverTriggerList.map(function(popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+  });
+
+  // Inicializacion del  carrusel
+  const myCarousel = new bootstrap.Carousel(document.getElementById('galeriaCarrusel'));
+});
                 }
